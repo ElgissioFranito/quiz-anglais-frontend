@@ -1,0 +1,37 @@
+.stat-card {
+    @apply bg-violet-500 rounded-3xl shadow-2xl text-white relative flex items-center flex-col gap-10 p-5;
+
+    width: 400px;
+    min-height: 400px;
+
+    .close-stat {
+        @apply absolute top-0 right-0 m-2 text-xl w-10 h-10 rounded-full cursor-pointer transition-all duration-300 flex justify-center items-center hover:bg-white hover:text-black;
+
+        background: #00000050;
+    }
+
+    .title {
+        @apply text-2xl font-bold;
+    }
+
+    .user-name {
+        @apply text-2xl;
+
+    }
+
+    .score {
+        @apply bg-white rounded-3xl shadow-2xl  relative 
+        flex flex-col gap-10 p-5;
+
+        width: 100%;
+
+        .item {
+            @apply mx-7 text-gray-600;
+
+            .label{
+                @apply font-bold text-violet-600;
+            }
+        }
+    }
+
+}

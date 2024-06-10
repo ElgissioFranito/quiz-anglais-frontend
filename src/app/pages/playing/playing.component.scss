@@ -1,0 +1,65 @@
+.playing-container {
+    @apply w-full h-full flex items-center justify-center flex-col;
+
+    .question-card {
+        @apply bg-white p-4 shadow-xl w-1/2 flex items-center justify-center flex-col max-sm:w-11/12;
+
+        border-radius: 15px;
+
+        .header-question-card {
+            @apply w-full flex justify-between;
+
+            .score {
+                @apply text-lg mb-2 text-center;
+            }
+
+            .level {
+                @apply text-gray-600 text-sm mt-1 mx-5 text-center;
+            }
+
+            .countdown {
+                @apply text-lg mb-4 text-center;
+            }
+        }
+
+        .hello {
+            @apply text-2xl font-bold mb-4 text-violet-800 text-center;
+        }
+
+        .question {
+            @apply text-xl font-semibold text-gray-700 py-4 text-center;
+        }
+
+        .responses {
+            @apply w-full 
+            flex justify-around flex-wrap gap-5;
+
+            .one-resp {
+                @apply cursor-pointer w-96 p-3 rounded-full text-gray-600 text-center
+                flex justify-center items-center 
+                md:hover:scale-110 md:hover:shadow-lg
+                transition-all;
+
+                border: 1px solid gray;
+            }
+
+            .correct {
+                @apply bg-green-500;
+            }
+
+            .incorrect {
+                @apply bg-red-500;
+            }
+
+            .mask {
+                @apply bg-white;
+            }
+        }
+
+
+        .quit {
+            @apply mt-8 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full;
+        }
+    }
+
+}

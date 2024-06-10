@@ -1,0 +1,15 @@
+<div class="app-container">
+    <router-outlet></router-outlet>
+</div>
+
+@if (shared.isGameOver) {
+    <div class="game-over">
+        <app-game-over></app-game-over>
+    </div>
+}
+
+@if (shared.isViewStat) {
+    <div class="game-over">
+        <app-statistic></app-statistic>
+    </div>
+}

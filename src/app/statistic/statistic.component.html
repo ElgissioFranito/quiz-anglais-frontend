@@ -1,0 +1,19 @@
+<div class="stat-card">
+    <div class="close-stat" (click)="onClose()"> <span>X</span> </div>
+    <div class="title">Votre statistique</div>
+    <div class="user-name"> {{ shared.authUser?.name}} </div>
+    <div class="score">
+        <div class="item"> 
+            <span class="label"> Meilleur score : </span> <span class="value">120</span> 
+        </div>
+        <div class="item"> 
+            <span class="label"> Questions répondus : </span> <span class="value">36</span> 
+        </div>
+        <div class="item"> 
+            <span class="label"> réponses correctes : </span> <span class="value">20</span> 
+        </div>
+        <div class="item"> 
+            <span class="label"> réponses incorrectes : </span> <span class="value">16</span> 
+        </div>
+    </div>
+</div>

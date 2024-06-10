@@ -1,0 +1,26 @@
+.over-card {
+    @apply bg-violet-500 rounded-xl shadow-2xl
+    flex items-center flex-col gap-3 justify-around;
+
+    width: 400px;
+    min-height: 400px;
+
+    .title{
+        width: 350px;
+    }
+
+    .buttons{
+        @apply w-full flex items-center justify-center flex-col gap-3;
+
+        button {
+            @apply w-5/6 bg-red-500 text-white rounded-md h-10 shadow-lg
+            md:hover:bg-red-600 md:hover:text-lg
+            transition-all duration-300;
+        }
+
+        .prev{
+            @apply bg-slate-400 md:hover:bg-slate-500;
+        }
+
+    }
+}

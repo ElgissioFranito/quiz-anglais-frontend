@@ -1,0 +1,17 @@
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    background: url('../../public/2_angry_birds_red.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.game-over {
+    @apply flex justify-center items-center;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.404);
+    position: absolute;
+    top: 0;
+    left: 0;
+}

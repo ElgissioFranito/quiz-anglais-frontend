@@ -1,0 +1,48 @@
+<div class="playing-container">
+  <div class="question-card">
+
+    <div class="header-question-card">
+
+      <p class="score">Score <span class="max-sm:hidden">:</span> {{ shared.score }}</p>
+
+      <p class="level">
+        Difficulté : {{ currentQuestion!.level }} <span class="max-sm:hidden">|</span> Catégorie : {{ currentQuestion!.categories }}
+      </p>
+
+      <p class="countdown">Reste <span class="max-sm:hidden">:</span> <span [ngClass]="{'text-red-700': (countdown<11)}">{{ countdown }} s</span>  </p>
+    </div>
+
+    <h1 class="hello">Bonjour 
+      @if (shared.authUser) {
+        <span>,</span> 
+      }
+      {{ shared.authUser?.name }} !</h1>
+
+    <div class="mb-4">
+      <h2 class="question">{{ currentQuestion.questionText }}</h2>
+    </div>
+
+    <ul class="responses">
+      
+      @for (option of currentQuestion!.options; track $index) {
+
+      <li class="one-resp" (click)="selectAnswer($index)" 
+      [ngClass]="{'mask': !isCorrection,
+      'correct': isCorrection && option == currentQuestion.correctAnswer,
+      'incorrect': isCorrection && option != currentQuestion.correctAnswer,
+      }">
+
+        <span>{{ option }}</span>
+      </li>
+
+      }
+
+    </ul>
+
+    <button class="quit" (click)="quitQuiz()">
+      Quitter
+    </button>
+
+
+  </div>
+</div>
