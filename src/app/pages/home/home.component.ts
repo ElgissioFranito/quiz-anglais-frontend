@@ -25,8 +25,6 @@ export class HomeComponent {
     public sharedService: SharedService) { }
 
   onNext(event: string = '') {
-    console.log('event = ' + event);
-
     setTimeout(() => {
       if (this.buttonsType == 'play') {
         const authUser = this.sharedService.authUser;

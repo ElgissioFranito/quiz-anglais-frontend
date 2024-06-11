@@ -39,7 +39,7 @@ export class PlayingComponent implements OnInit {
   }
 
   checkAuthUser() {
-    if (!this.shared.authUser) {
+    if (!this.shared.authUser || !this.shared.level) {
       this.router.navigate(['home'])
     } else {
       this.loadNextQuestion();
@@ -47,18 +47,19 @@ export class PlayingComponent implements OnInit {
   }
 
   loadNextQuestion(): void {
-    this.countdown = 25;
+    this.countdown = 30;
     this.interval = window.setInterval(() => this.countdownBegin(), 1000);
     this.isCorrection = false;
-    const data = {
+    const dataToSend = {
       level: this.shared.level,
       categories: this.shared.category,
     }
 
-    this.questionService.getNext(data).subscribe({
-      next: (data) => {
+    this.questionService.getNext(dataToSend).subscribe({
+      next: (data : QuestionInterface) => {
         this.currentQuestion = data;
         this.countdownBegin();
+        
       }
     })
   }
@@ -76,8 +77,9 @@ export class PlayingComponent implements OnInit {
     if (this.errorMargin > 1) {
       this.errorMargin--;
       setTimeout(() => {
+        clearInterval(this.interval);
         this.loadNextQuestion();
-      }, 1000);
+      }, 2000);
     } else {
       this.shared.isGameOver = true;
       this.errorMargin = 3;
@@ -91,8 +93,9 @@ export class PlayingComponent implements OnInit {
     if (this.currentQuestion.options[index] === this.currentQuestion.correctAnswer) {
       this.shared.score += 10;
       setTimeout(() => {
+        clearInterval(this.interval);
         this.loadNextQuestion();
-      }, 1000);
+      }, 2000);
     } else {
       this.counterrorMarginRest();
     }
