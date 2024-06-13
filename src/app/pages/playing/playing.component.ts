@@ -4,11 +4,12 @@ import { Router, RouterModule } from '@angular/router';
 import { QuestionService } from '../../services/apis/question.service';
 import { QuestionInterface } from '../../interfaces/interfaces';
 import { SharedService } from '../../shared/shared.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-playing',
   standalone: true,
-  imports: [RouterModule, NgClass],
+  imports: [RouterModule, NgClass, TranslateModule],
   templateUrl: './playing.component.html',
   styleUrl: './playing.component.scss'
 })

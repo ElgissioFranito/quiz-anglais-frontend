@@ -12,6 +12,8 @@ export class SharedService{
   category? : string;
   score = 0;
 
+  lang? : string;
+
   constructor() { }
 
 }

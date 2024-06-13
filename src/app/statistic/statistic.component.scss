@@ -34,4 +34,12 @@
         }
     }
 
+    .logOut {
+        @apply text-2xl border rounded-3xl shadow-2xl cursor-pointer
+        w-64 h-10 bg-red-600 text-white
+        hover:bg-white hover:text-red-600 hover:border-red-600
+        hover:border-2 hover:scale-x-110
+        transition-all duration-300
+        flex justify-center items-center;
+    }
 }

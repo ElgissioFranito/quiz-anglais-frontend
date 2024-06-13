@@ -6,16 +6,14 @@
       <p class="score">Score <span class="max-sm:hidden">:</span> {{ shared.score }}</p>
 
       <p class="level">
-        Difficulté : {{ currentQuestion!.level }} <span class="max-sm:hidden">|</span> Catégorie : {{ currentQuestion!.categories }}
+        {{ 'home.level' | translate }} : {{ 'home.' + currentQuestion!.level | translate}} <span class="max-sm:hidden">|</span> {{ 'home.category' | translate }} : {{ 'home.' + currentQuestion!.categories | translate }}
       </p>
 
-      <p class="countdown">Reste <span class="max-sm:hidden">:</span> <span [ngClass]="{'text-red-700': (countdown<11)}">{{ countdown }} s</span>  </p>
+      <p class="countdown">{{ 'play.time' | translate }} <span class="max-sm:hidden">:</span> <span [ngClass]="{'text-red-700': (countdown<11)}">{{ countdown }} s</span>  </p>
     </div>
 
-    <h1 class="hello">Bonjour 
-      @if (shared.authUser) {
-        <span>,</span> 
-      }
+    <h1 class="hello">
+      {{ 'play.hello' | translate }}@if(shared.authUser){ <span>,</span> }
       {{ shared.authUser?.name }} !</h1>
 
     <div class="mb-4">

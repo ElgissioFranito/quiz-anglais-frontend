@@ -1,0 +1,41 @@
+{
+    "home": {
+        "changeLang": "Anglais",
+        "description": "Il s'agit d'une application web pour améliorer votre anglais tout en s'amusant. Vous devez répondre aux question de grammaire, orthographe, expression et vocabulaire. Votre score montera au fur à mesure si vos réponses sont correctes.",
+        "level": "niveau",
+        "score": "score",
+        "category": "categorie",
+        "easy": "facile",
+        "normal": "moyen",
+        "difficult": "difficile",
+        "back": "retour",
+        "login": "se connecter",
+        "username": "nom d'utilisateur",
+        "password": "mot de passe",
+        "next": "suivant",
+        "all": "tout",
+        "grammar": "grammaire",
+        "spelling": "orthographe",
+        "expression": "expression",
+        "vocabulary": "vocabulaire",
+        "stat": "stat"
+    },
+    "play": {
+        "hello": "bonjour",
+        "quit": "quitter",
+        "time": "reste"
+    },
+    "stat": {
+        "your statistics": "votre statistique",
+        "best score": "meilleurs score",
+        "questions answered": "question répondus",
+        "correct answers": "réponses correctes",
+        "incorrect answers": "réponses incorrectes",
+        "log out": "déconnecter"
+    },
+    "over": {
+        "your score is": "votre score est",
+        "try again": "récommencer",
+        "back to home": "menu principal"
+    }
+}

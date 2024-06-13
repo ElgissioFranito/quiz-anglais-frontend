@@ -3,9 +3,7 @@
 
     @if (buttonsType == "play") {
     <div class="desc">
-        Il s'agit d'une application web pour améliorer votre angalis tout en s'amusant. <br>
-        Vous devez répondre aux question de grammaire, orthographe, expression et vocabulaire. <br>
-        Votre score montera au fur à mesure si vos réponses sont correctes.
+        {{ 'home.description' | translate }}
     </div>
     }
 
@@ -14,41 +12,70 @@
         @if (buttonsType == "play") {
         <div class="play">
             @if (sharedService.authUser) {
-                <img src="home/stat.svg" alt="stat" (click)="onStat()">
+            <img src="home/stat.svg" alt="stat" (click)="onStat()">
             }
             <img src="home/play.svg" alt="play" (click)="onNext()">
         </div>
+        <div class="lang">
+            <img src="flags/fr.jpg" [ngClass]="{active: sharedService.lang == 'fr'}" (click)="changeLang('fr')">
+            <img src="flags/en.jpg" width="300" height="200" [ngClass]="{active: sharedService.lang == 'en'}" (click)="changeLang('en')">
+        </div>
         } @else if (buttonsType == "login") {
 
-        <h1> S'identifier </h1>
+        <h1> {{ 'home.login' | translate }} </h1>
         <div class="login">
             <form [formGroup]="userForm">
-                <input type="text" formControlName="name" placeholder="Nom d'utilisateur !" [ngClass]="{'invalid':userForm.invalid}">
-                <button type="submit" (click)="onNext(userForm.value!.name)" [disabled]="!userForm.valid">Valider</button>
-                <button class="prev" (click)="onPrev()">Retour</button>
+                <input type="text" formControlName="name" placeholder="{{ 'home.username' | translate }}"
+                    [ngClass]="{'invalid':userForm.invalid}">
+                <button type="submit" (click)="onNext(userForm.value!.name)" [disabled]="!userForm.valid">
+                    {{'home.next' | translate }}
+                </button>
+                <button class="prev" (click)="onPrev()">
+                    {{'home.back' | translate }}
+                </button>
             </form>
         </div>
 
         } @else if (buttonsType == "level") {
 
-        <h1> Niveau </h1>
+        <h1> {{ 'home.level' | translate }} </h1>
         <div class="level">
-            <button (click)="onNext('easy')">Facile</button>
-            <button (click)="onNext('normal')">Moyen</button>
-            <button (click)="onNext('difficult')">Difficile</button>
-            <button class="prev" (click)="onPrev()">Retour</button>
+            <button (click)="onNext('easy')">
+                {{ 'home.easy' | translate }}
+            </button>
+            <button (click)="onNext('normal')">
+                {{ 'home.normal' | translate }}
+            </button>
+            <button (click)="onNext('difficult')">
+                {{ 'home.difficult' | translate }}
+            </button>
+            <button class="prev" (click)="onPrev()">
+                {{ 'home.back' | translate }}
+            </button>
         </div>
 
         } @else {
 
-        <h1> Categorie </h1>
+        <h1>  {{ 'home.category' | translate }} </h1>
         <div class="category">
-            <button (click)="onNext()">Tous</button>
-            <button (click)="onNext('grammar')">Grammaire</button>
-            <button (click)="onNext('spelling')">Orthographe</button>
-            <button (click)="onNext('expression')">Expression</button>
-            <button (click)="onNext('vocabulary')">Vocabulaire</button>
-            <button class="prev" (click)="onPrev()">Retour</button>
+            <button (click)="onNext()">
+                {{ 'home.all' | translate }}
+            </button>
+            <button (click)="onNext('grammar')">
+                {{ 'home.grammar' | translate }}
+            </button>
+            <button (click)="onNext('spelling')">
+                {{ 'home.spelling' | translate }}
+            </button>
+            <button (click)="onNext('expression')">
+                {{ 'home.expression' | translate }}
+            </button>
+            <button (click)="onNext('vocabulary')">
+                {{ 'home.vocabulary' | translate }}
+            </button>
+            <button class="prev" (click)="onPrev()">
+                {{ 'home.back' | translate }}
+            </button>
         </div>
 
         }

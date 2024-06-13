@@ -2,11 +2,13 @@
     @apply w-full h-full flex items-center justify-center flex-col gap-16;
 
     .title {
-        @apply w-1/3 max-sm:w-11/12;
+        @apply w-1/3
+        max-sm:w-11/12 max-lg:w-1/2 max-2xl:w-2/5;
     }
 
     .desc {
-        @apply text-white text-center text-lg max-sm:w-8/12 text-sm;
+        @apply text-white text-center text-lg text-sm
+        max-sm:w-8/12 sm:w-4/12;
 
         text-shadow: 1px 1px 3px black;
         font-weight: bolder;
@@ -14,7 +16,8 @@
     }
 
     .buttons {
-        @apply w-1/5 max-sm:w-11/12 flex items-center justify-center flex-col gap-10;
+        @apply w-1/5 flex items-center justify-center flex-col gap-10
+        max-sm:w-11/12 max-lg:w-1/2 max-2xl:w-2/5;
 
         .play {
             @apply w-full flex justify-around;
@@ -23,6 +26,21 @@
                 @apply w-1/3 opacity-30 transition-all duration-200
                 hover:opacity-100 active:translate-y-3;
             }
+        }
+
+        .lang {
+            @apply w-52 flex justify-around;
+
+            img {
+                @apply w-1/5 opacity-30 cursor-pointer 
+                transition-all duration-200;
+            }
+
+            .active {
+                @apply opacity-100
+                scale-150;
+            }
+
         }
 
         h1 {

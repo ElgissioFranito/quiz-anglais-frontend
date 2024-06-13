@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared/shared.service';
 import { Router, RouterModule } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-game-over',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslateModule],
   templateUrl: './game-over.component.html',
   styleUrl: './game-over.component.scss'
 })

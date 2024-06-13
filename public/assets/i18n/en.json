@@ -1,0 +1,41 @@
+{
+    "home": {
+        "changeLang": "French",
+        "description": "This is a web application to improve your English while having fun. You must answer questions on grammar, spelling, expression, and vocabulary. Your score will increase progressively if your answers are correct.",
+        "level": "level",
+        "score": "score",
+        "category": "category",
+        "easy": "easy",
+        "normal": "normal",
+        "difficult": "difficult",
+        "back": "back",
+        "login": "login",
+        "username": "username",
+        "password": "password",
+        "next": "next",
+        "all": "all",
+        "grammar": "grammar",
+        "spelling": "spelling",
+        "expression": "expression",
+        "vocabulary": "vocabulary",
+        "stat": "stat"
+    },
+    "play": {
+        "hello": "hello",
+        "quit": "quit",
+        "time": "time"
+    },
+    "stat": {
+        "your statistics": "your statistics",
+        "best score": "best score",
+        "questions answered": "questions answered",
+        "correct answers": "correct answers",
+        "incorrect answers": "incorrect answers",
+        "log out": "log out"
+    },
+    "over": {
+        "your score is": "your score is",
+        "try again": "try again",
+        "back to home": "back to home"
+    }
+}

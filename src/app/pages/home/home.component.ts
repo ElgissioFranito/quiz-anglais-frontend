@@ -5,11 +5,16 @@ import { UserService } from '../../services/apis/user.service';
 import { UserInterface } from '../../interfaces/interfaces';
 import { SharedService } from '../../shared/shared.service';
 import { NgClass } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule,NgClass],
+  imports: [
+    RouterModule,
+    TranslateModule,
+    ReactiveFormsModule,
+    NgClass],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -22,7 +27,8 @@ export class HomeComponent {
   constructor(
     private router: Router,
     private userService: UserService,
-    public sharedService: SharedService) { }
+    public sharedService: SharedService,
+    private translate: TranslateService) { }
 
   onNext(event: string = '') {
     setTimeout(() => {
@@ -42,7 +48,7 @@ export class HomeComponent {
             this.buttonsType = 'level';
           }
         })
-        
+
       } else if (this.buttonsType == 'level') {
         this.sharedService.level = event;
         this.buttonsType = 'category'
@@ -68,8 +74,14 @@ export class HomeComponent {
     }
   }
 
-  onStat(){
+  onStat() {
     this.sharedService.isViewStat = true;
+  }
+
+  changeLang(lang: string) {
+    this.sharedService.lang = lang;
+    this.translate.use(lang);
+    localStorage.setItem('userLang', lang);
   }
 
 }
